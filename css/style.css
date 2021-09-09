@@ -1,0 +1,28 @@
+.employee_profile{
+    border: 1px solid black;
+    inline-size: min-content;
+    padding: 6px 6px;
+}
+
+img{
+    width: 500px;
+    height: 500px;
+}
+
+.flex-container{
+    display: flex;
+}
+
+.flex-container > div{
+    padding: 10px 20px;
+}
+
+h3{
+    text-align: center;
+}
+
+
+.crown{
+    text-align: right;
+}
+
