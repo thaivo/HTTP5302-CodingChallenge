@@ -4,17 +4,16 @@
     padding: 6px 6px;
 }
 
-img{
-    width: 500px;
-    height: 500px;
-}
+
 
 .flex-container{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flex-container > div{
-    padding: 10px 20px;
+    padding: 5px 10px;
+    margin: auto 5px;
 }
 
 h3{
@@ -26,3 +25,14 @@ h3{
     text-align: right;
 }
 
+.featured{
+    width: 20px;
+    height: 20px;
+}
+
+.avatar{
+    border-radius:50%;
+    width: 150px;
+    height: 150px;
+    margin: 10px 40px;
+}

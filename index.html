@@ -13,30 +13,18 @@
         <h2>Coding challenge</h2>
     </header>
     <main>
-        <div id="employees">
-            <div class="employee_profile">
-                <div class="crown">👑</div>
-                <svg width="400" height="200">
-                    <defs>
-                        <clipPath id="circleView">
-                            <circle cx="200" cy="100" r="100" fill="#FFFFFF" />
-                        </clipPath>
-                    </defs>
-                    <image 
-                      width="400" 
-                      height="200" 
-                      xlink:href="http://sandbox.bittsdevelopment.com/code1/employeepics/3.jpg" 
-                      clip-path="url(#circleView)"
-                    />
-                 </svg>
-                
-                <h3>Christine Bittle</h3>
-                <p>Proudly the most unproductive member of the team.</p>
-                <div class="flex-container">
-                    <div class="role" style="background-color:#B4ADEA; color: azure;">Coding</div>
-                    <div class="role" style="background-color: #E3D3E4;color: azure;">Gaming</div>
+        <div>
+            <form id="searchForm" method="GET">
+                <div>
+                    <input type="text" id="keyword"/>
                 </div>
-            </div>
+                
+                <div>
+                    <button type="submit" id="search">Search</button>
+                </div>
+            </form>
+        </div>
+        <div id="employees" class="flex-container">
         </div>
     </main>
 </body>
