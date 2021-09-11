@@ -1,7 +1,16 @@
 window.onload = function(){
     
     //console.log(jsonObj);
-
+    var roles = document.getElementById("roles");
+    var url = "http://sandbox.bittsdevelopment.com/code1/fetchroles.php";
+    var xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.open("GET",url);
+    xmlHttpRequest.onreadystatechange = function(){
+        if(xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200){
+            createDropDownListOfRolesFromJSONArray(JSON.parse(xmlHttpRequest.responseText));
+        }
+    }
+    xmlHttpRequest.send();
 
     var searchBtn = document.getElementById("searchForm");
     searchBtn.addEventListener("submit",function(e){
@@ -18,6 +27,20 @@ window.onload = function(){
         }
         xmlHttpReq.send();
     })
+}
+
+function createDropDownListOfRolesFromJSONArray(jsonArrayOfRoles){
+    var dropDownListOfRoles = document.getElementById("roles");
+    jsonArrayOfRoles.forEach(element=>{
+        var newOption = document.createElement("option");
+        newOption.value = element.roleid;
+        newOption.innerText = element.rolename;
+        newOption.style.backgroundColor = element.rolecolor;
+        newOption.onclick = function(){
+            
+        }
+        dropDownListOfRoles.appendChild(newOption);
+    });
 }
 
 function transformJsonToHTML(input){
