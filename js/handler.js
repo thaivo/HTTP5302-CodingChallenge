@@ -79,15 +79,8 @@ function createDropDownListOfRolesFromJSONArray(jsonArrayOfRoles){
 Description: transfrom the input param from JSON to HTML text
 */
 function transformEmployeeFromJsonToHTML(input){
-    //Because input is an JSON object not a JSON array, I do not know exactly how many employees the calling api return 
-    //and input does not have foreach function.
-    //In other words, I must debug and know what structure of input is look like.
-    //input should be an array or the API should return a JSON array, and we can use foreach function without do an array bound-checking.
-    for(var i = 0; i < NUMBER_OF_EMPLOYEES; i++){
-        if(input[i+1]){
-            createUserProfile(input[i+1]);
-        }
-        
+    for(iter in input){
+        createUserProfile(input[iter]);
     }
 }
 
@@ -129,6 +122,8 @@ function createUserProfile(jsonEmployeeObject){
             var roleElement = document.createElement("div");
             roleElement.style.backgroundColor = element.rolecolor;
             roleElement.style.color = "azure";
+            roleElement.style.textShadow = "2px 2px 4px #000000";
+            roleElement.style.boxShadow = "2px 2px 2px grey";
             roleElement.appendChild(document.createTextNode(element.rolename));
             roleArrays.appendChild(roleElement);
         });
